@@ -76,7 +76,7 @@ You just need to install Jenkins and dependency plug-ins listed below :)
 
 1. Clone the repo
 ```sh
-git clone git@github.com:Nafiros/B-DOP-500-Popeye-Bootstrap.git
+git clone git@github.com:Nafiros/B-DOP-500-MyMarvin-Bootstrap.git
 ```
 2. Install Jenkins on your System or via Docker (look the Jenkins Documentation)
 
