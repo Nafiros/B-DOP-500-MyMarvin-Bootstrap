@@ -1,0 +1,38 @@
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  myViewsTabBar: "standard"
+  numExecutors: 2
+  remotingSecurity:
+    enabled: true
+  systemMessage: "Hello! Welcome to my Jenkins instance :)"
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "jigglypuff"
+        name: "Jigglypuff"
+
+
+jobs:
+  - script: >
+      freestyleJob('Disk Space Check') {
+        steps {
+          shell('df')
+        }
+      }
+
+      freestyleJob('Daily Dose of Satisfaction') {
+        parameters {
+          stringParams('NAME', '', '')
+        }
+        steps {
+          shell('echo "Hello dear ^${NAME}!"')
+          shell('date')
+          shell('echo "This is your DDoS number $BUILD_NUMBER."')
+        }
+      }
